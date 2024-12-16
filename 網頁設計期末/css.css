@@ -1,0 +1,1125 @@
+/* 基本樣式重置 */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* 全版 banner */
+.banner {
+    height: 100vh;
+    /* Occupy 100% of viewport height */
+    background: url('season1.jpg') no-repeat center center;
+    background-size: cover;
+    /* Ensure image covers the entire area */
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    color: rgb(184, 62, 62);
+    /* Default text color */
+    text-align: center;
+    position: relative;
+
+}
+
+.banner-content {
+    background: rgba(15, 13, 138, 0.5);
+    /* Background overlay */
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeInOut 5s infinite;
+    /* Apply fadeInOut animation */
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Enhance text visibility */
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Fade in and fade out effect */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        /* Start invisible */
+    }
+
+    50% {
+        opacity: 1;
+        /* Fully visible */
+    }
+
+    100% {
+        opacity: 0;
+        /* End invisible */
+    }
+}
+
+/* 影片滾動放大效果 */
+.transition-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* 確保影片不會蓋住文字 */
+    overflow: hidden;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 使影片完全覆蓋區域 */
+    animation: zoomIn 60s linear infinite;
+    /* 控制影片的滾動效果 */
+}
+
+/* 過場影片動畫效果：影片滾動放大，聚焦台灣 */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.5) translateY(-10%);
+    }
+
+    100% {
+        transform: scale(2) translateY(-20%);
+    }
+}
+
+/* 第二個 Section: 前言 */
+.introduction {
+    padding: 50px 20px;
+    background: linear-gradient(45deg,
+            rgba(25, 122, 48, 1) 55%,
+            rgba(32, 178, 7, 1) 84%);
+    background-blend-mode: normal;
+    text-align: center;
+    position: relative;
+
+    @keyframes fadeInOut {
+        0% {
+            opacity: 0;
+            /* Start invisible */
+        }
+
+        50% {
+            opacity: 1;
+            /* Fully visible */
+        }
+
+        100% {
+            opacity: 0;
+            /* End invisible */
+        }
+    }
+}
+.momomovingtext {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    white-space: nowrap;
+    animation: moveRight 10s linear forwards;
+    opacity: 0; /* 初始不可見 */
+  }
+
+  @keyframes moveRight {
+    0% {
+      left: -100%;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      left: 100vw;
+      opacity: 1;
+    }
+  }
+.introduction h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.intro-content .map-placeholder {
+    margin-top: 30px;
+    height: 300px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* 第三個 Section: 語言消失危機 */
+.language-crisis {
+    position: relative;
+    padding: 50px 20px;
+    background: #f4f4f4;
+    text-align: center;
+    background-image: url('season1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.language-crisis-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background-image: url('season4.jpg');
+    /* 半透明背景 */
+    border-radius: 10px;
+}
+
+.language-crisis h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.language-crisis p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* 語言消失數據部分 */
+.language-chart {
+    margin-top: 30px;
+}
+
+.language-chart h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.map-placeholder {
+    background: #ddd;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #555;
+    font-style: italic;
+}
+
+/* 滾動效果 */
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+}
+
+/* 滾動浮現效果 */
+.language-crisis-content p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.language-crisis-content p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 按鈕樣式 */
+.explore-button {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.language-crisis-content-right {
+    position: relative;
+    padding: 40px;
+    width: 50%;
+    margin-left: 25%;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.8;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    opacity: 0;
+    /* 初始為隱藏 */
+    transform: translateY(30px);
+    /* 初始位置稍微向下 */
+    transition: opacity 1s ease, transform 1s ease;
+    /* 加入過渡效果 */
+}
+
+.language-crisis-content-right.visible {
+    opacity: 1;
+    /* 最終顯示 */
+    transform: translateY(0);
+    /* 恢復到原始位置 */
+}
+
+/* 固定背景圖片 */
+.language-crisis-content-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('season4.jpg');
+    /* 替換為您的背景圖片 */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* 章節一樣式 */
+.section-introduction {
+    position: relative;
+    padding: 50px 20px;
+    background: #f4f4f4;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.section-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 影片容器樣式 */
+.video-container {
+    width: 100%;
+    height: 60vh;
+    /* 根據需要調整影片容器的高度 */
+    overflow: hidden;
+    position: relative;
+}
+.video-container4 {
+    width: 60%;
+    height: 60vh;
+    /* 根據需要調整影片容器的高度 */
+    overflow: hidden;
+    position: relative;
+}
+/* 視頻樣式：滾動播放和隱藏 */
+.section-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    /* 初始隱藏影片 */
+    transition: opacity 1s ease-in-out;
+}
+
+/* 當影片進入視窗時顯示 */
+.section-video.visible {
+    opacity: 1;
+}
+
+/* 固定背景，避免重複 */
+.section-introduction::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('season3.jpg');
+    /* 替換為您的背景圖片 */
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+
+
+/* 整體區域樣式 */
+.transition-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 背景影片樣式 */
+.transition-video {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 100vh;
+    width: 50%;
+    /* 確保影片比例正確 */
+    z-index: -1;
+    /* 放置於文字下方 */
+    object-fit: cover;
+    /* 確保影片填滿容器 */
+}
+
+/* 文字容器樣式 */
+.transition-text {
+    width: 50%;
+    /* 右側佔據半螢幕 */
+    margin-left: 50%;
+    /* 往右偏移半螢幕 */
+    text-align: center;
+    color: #6f4e37;
+    /* 咖啡色 */
+    font-size: 1.5rem;
+    line-height: 1.8;
+    opacity: 0;
+    /* 初始隱藏 */
+    transform: translateY(50px);
+    /* 向下位移 */
+    transition: opacity 1s ease, transform 1s ease;
+    /* 平滑過渡 */
+}
+
+/* 文字淡入效果 */
+.transition-text.visible {
+    opacity: 1;
+    /* 顯示文字 */
+    transform: translateY(0);
+    /* 回到原位 */
+}
+
+/* 響應式調整 */
+@media screen and (max-width: 768px) {
+    .transition-text {
+        font-size: 1.2rem;
+        /* 小螢幕文字略小 */
+    }
+}
+
+
+
+/* 章節區域 */
+.section {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 章節標題樣式 */
+.section-title {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 20vh;
+    /* 讓標題居中 */
+}
+
+/* 影片容器 */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    /* 影片佔螢幕的一半寬度 */
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 影片樣式 */
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 文字容器 */
+.text-container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    /* 文字佔右側 */
+    padding: 20px;
+    color: #6f4e37;
+    /* 咖啡色文字 */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0;
+    /* 初始文字隱藏 */
+    transform: translateY(30px);
+    /* 初始向下移動 */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 當文字可見時 */
+.text-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 響應式設計，調整文字大小 */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .text-container {
+        font-size: 2.5rem;
+    }
+}
+
+/* 章節標題樣式 */
+.section-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* 章節圖片或影片 */
+.media-container {
+    width: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+.media {
+    width: 100%;
+    height: auto;
+}
+
+/* 文字區域 */
+.text-container {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 清除浮動影響，讓元素不會被擠壓 */
+.section {
+    clear: both;
+    margin: 40px 0;
+}
+
+/* 教育方式背景滾動 */
+.education-method {
+    position: relative;
+    background: url('season1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.education-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #fff;
+}
+
+/* 右側文字介紹 */
+.text-container {
+    width: 50%;
+    float: right;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 右側文字介紹 */
+.text-container {
+    width: 50%;
+    float: right;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    display: block;
+    /* 确保显示 */
+    visibility: visible;
+    /* 确保内容可见 */
+    opacity: 1;
+    /* 确保不透明 */
+}
+
+/* 清除浮动影响 */
+.section {
+    clear: both;
+    margin: 40px 0;
+}
+
+/* 响应式设计，调整元素大小 */
+@media screen and (max-width: 768px) {
+    .text-container {
+        font-size: 1rem;
+        width: 100%;
+        float: none;
+    }
+}
+
+.text-container {
+    z-index: 10;
+    /* 确保它处于前面 */
+    position: relative;
+    /* 使元素有层级 */
+}
+
+/* 四季課本橫向滾動 */
+.book-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.book-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 20px 0;
+}
+
+.book {
+    display: inline-flex;
+}
+
+.book img {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* 響應式設計，調整元素大小 */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .text-container {
+        font-size: 1rem;
+        width: 100%;
+        float: none;
+    }
+
+    .media-container {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .book img {
+        width: 200px;
+    }
+}
+
+
+/* 章節二：台灣現有教育議題 */
+.education-issue-section {
+    width: 100%;
+    /* 宽度 100% 使其占满整个视口 */
+    height: 100vh;
+    /* 高度 100vh 使其占满整个视口的高度 */
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    align-items: center;
+    /* 水平居中 */
+    justify-content: center;
+    /* 垂直居中 */
+    padding: 20px;
+    /* 内边距，避免内容紧贴边缘 */
+    box-sizing: border-box;
+    /* 包括内边距和边框在内 */
+    text-align: center;
+    /* 文字居中对齐 */
+    background-image: url('season4.jpg');
+}
+
+/* 标题样式 */
+.education-issue-section h2 {
+    font-size: 2.5rem;
+    /* 调整标题大小 */
+    color: #3a3a3a;
+    /* 设置标题颜色 */
+    margin-bottom: 20px;
+    /* 设置标题和段落的间距 */
+}
+
+/* 段落样式 */
+.education-issue-section p {
+    font-size: 1.2rem;
+    /* 调整段落大小 */
+    color: #555555;
+    /* 设置段落文字颜色 */
+    line-height: 1.8;
+    /* 设置行间距 */
+    max-width: 800px;
+    /* 限制最大宽度，避免文字过长 */
+    margin: 0 auto;
+    /* 使段落居中 */
+}
+
+
+/*第二章*/
+
+/* 背景容器 */
+.issue-description {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* 高度填满整个视口 */
+    overflow: hidden;
+    /* 隐藏超出视口的内容 */
+    background: url('season1.jpg') no-repeat center center fixed;
+    /* 固定背景图 */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 内容区域 */
+.background-container {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* 文字聚焦效果 */
+.focus-text {
+    opacity: 0;
+    /* 初始透明度为 0 */
+    transform: translateY(30px);
+    /* 初始位置稍微下移 */
+    transition: opacity 1s ease, transform 1s ease;
+    /* 渐变效果 */
+    color: #fff;
+    /* 文字颜色 */
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* 文字在视口内时的效果：当用户滚动到内容区域时 */
+.issue-description.in-view .focus-text {
+    opacity: 1;
+    /* 文字渐变为不透明 */
+    transform: translateY(0);
+    /* 文字从下方移至原位置 */
+}
+
+.focus-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.focus-text p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* 文字聚焦效果 */
+.focus-text {
+    opacity: 0;
+    /* 初始透明度为 0 */
+    transform: translateY(30px);
+    /* 初始位置稍微下移 */
+    transition: opacity 1s ease, transform 1s ease;
+    /* 渐变效果 */
+    color: #fff;
+    /* 文字颜色 */
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+/* Video container */
+.video-container {
+    position: relative; /* Ensures video stays positioned within this container */
+    width: 800px; /* Restrict width */
+    height: 450px; /* Restrict height (adjust as needed) */
+    margin: 50px auto; /* Center the container horizontally */
+    overflow: hidden; /* Ensures video stays within boundaries */
+    border: 2px solid #ccc; /* Optional: border for visibility */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Video element */
+.video-container video {
+    width: 100%; /* Scale video to fit container width */
+    height: 100%; /* Scale video to fit container height */
+    object-fit: cover; /* Ensures the video fills the container without distortion */
+}
+
+.scroll-effect-container {
+    height: 150vh; /* 增加滾動空間 */
+    padding: 50px;
+}
+
+.scroll-effect-container .text-section {
+    opacity: 0;
+    transform: translateX(-50px) rotate(-10deg) scale(0.8);
+    transition: opacity 0.8s ease, transform 0.8s ease, color 1s ease, filter 0.8s ease;
+    margin: 50px 0;
+    font-size: 1.5em;
+    color: #bdb10b; /* Initial color */
+    filter: blur(10px);
+}
+
+.scroll-effect-container .text-section.visible {
+    opacity: 1;
+    transform: translateX(0) rotate(0) scale(1);
+    color: #ca614e59; /* Color change on visibility */
+    filter: blur(0px);
+    animation: bounce 0.8s ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(50px) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.info-box {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(243, 0, 0);
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translate(15px, 15px);
+    /* Offset from the cursor */  
+    /* Hide by default */
+    z-index: 100;
+}
+
+.nandaoruma {
+    position: absolute;
+    top: -100px; /* 初始位置在畫面外 */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    opacity: 0;
+    animation: dropAndShine 5s ease-out forwards;
+  }
+
+  @keyframes dropAndShine {
+    0% {
+      top: -100px;
+      opacity: 1;
+      text-shadow: none;
+    }
+    50% {
+      top: 20%;
+      opacity: 1;
+      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    }
+    100% {
+      top: 10%;
+      opacity: 1;
+      text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+    }
+  }
+
+  .video-containerN {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* 調整影片容器的大小 */
+    max-width: 800px;
+    padding: 10px;
+    background-image: url('season1.jpg'); /* 設定圖片作為背景 */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .issue-description {
+    position: relative;
+    padding: 40px;
+    background-image: url('season4.jpg');
+  }
+  
+  .background-container {
+    position: relative;
+    overflow: hidden;
+    background-image: url('season2.jpg'); /* 可以更換背景圖片 */
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .focus-text {
+    position: relative;
+    font-family: 'Times New Roman', serif; /* 使用帶有陳舊感的字體 */
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    animation: fadeInLeft 2s ease-out forwards;
+  }
+  
+  @keyframes fadeInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  h2 {
+    font-family: 'Georgia', serif; /* 標題使用更具陳舊感的字體 */
+    font-size: 2.5em;
+    color: #3e3e3e;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  p {
+    margin: 10px 0;
+  }
+  /* Reset */
+body, h1, h2, p, blockquote {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Chapter 3 section */
+  .chapter-3 {
+    position: relative;
+    padding: 10px;
+  }
+  
+  .fixed-background {
+    background: url('IMG_1762.JPG') no-repeat center center fixed;
+    background-size: cover;
+    padding: 60px 20px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .section {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .left-photos img {
+    display: flex;
+    max-width: 600px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .right-text {
+    flex: 1;
+    font-size:17px
+  }
+  
+  .right-text p {
+    margin-bottom: 100px;
+  }
+  
+  /* Transition 2 styles */
+  .transition-2 {
+    background-color: #f4f3f3;
+    color: #0a0909;
+    padding: 32px 49px;
+    text-align: center;
+    animation: fadeIn 5s ease-in-out;
+  }
+  .transitionphotos img {
+    max-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .transition-2 p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 20px;
+  }
+  
+  /* Interview section */
+  .interview-1 {
+    padding: 20px;
+    background: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .interview-1 video {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+    /* Interview section */
+  .interview-2 {
+    padding: 10px;
+    background: #fff;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .interview-2 video {
+    display: block;
+    width: 20%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  blockquote {
+    font-style: italic;
+    color: #666;
+    border-left: 4px solid #ffffff;
+    padding-left: 10px;
+    margin: 0;
+  }
+
+  blockquote {
+    font-style: italic;
+    color: #666;
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+    margin: 0;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.story-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .text {
+    flex: 1;
+  }
+  
+  .text h2 {
+    color: #495057;
+  }
+  
+  .text p {
+    display: flex;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .media {
+    flex: 1;
+  }
+  
+  .media img, .media video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .media2 video {
+    width: 400px;
+    height: 600px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
